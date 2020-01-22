@@ -1,0 +1,13 @@
+
+.uni-swiper-tab.data-v-1805ff02 {
+	border-bottom: none;
+}
+.swiper-tab-list.data-v-1805ff02 {
+}
+.swiper-active.data-v-1805ff02 {
+	border-top: 2px solid #fafa00;
+	border-bottom: 2px solid #fafa00;
+	width: 60%;
+	margin: auto;
+}
+

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "item-list": "/components/index/item-list",
+    "tar-swiper-header": "/components/index/tar-swiper-header",
+    "loading-more": "/components/index/loading-more",
+    "nothing": "/components/common/nothing"
+  }
+}
