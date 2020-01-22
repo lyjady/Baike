@@ -18,9 +18,10 @@
 		bottom: 0;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: center;
 		image {
-			width: 50%;
+			width: 40%;
+			height: 40%;
 		}
 	}
 </style>
