@@ -7,7 +7,7 @@
 					<scroll-view class="list" scroll-y @scrolltolower="loadingMore(index)">
 						<template v-if="items.list.length > 0">
 							<block v-for="(item, index2) in items.list" :key="index2"><item-list :item="item"></item-list></block>
-							<!-- <loading-more :loadingMoreInfo="loadingMoreInfo"></loading-more> -->
+							<loading-more :loadingMoreInfo="loadingMoreInfo"></loading-more>
 						</template>
 						<template v-else>
 							<nothing></nothing>
@@ -321,7 +321,7 @@ export default {
 			this.tarIndex = e.detail.current;
 		},
 		loadingMore(index) {
-			if (this.loadingMoreInfo === '加载中...') {
+			if (this.loadingMoreInfo !== '上拉加载更多') {
 				return;
 			}
 			this.loadingMoreInfo = '加载中...';

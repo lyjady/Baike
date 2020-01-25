@@ -1,5 +1,5 @@
 <template>
-	<view class="item animated fadeInLeft fast">
+	<view class="item animated fadeIn fast">
 		<view class="item-header">
 			<view class="item-header-left">
 				<!-- 头像 -->
