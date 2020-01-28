@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<tar-swiper-header :tabBars="tabBars" :tarIndex="tarIndex" @changeTar="changeTar"></tar-swiper-header>
+		<tar-swiper-header :tabBars="tabBars" :tarIndex="tarIndex" @changeTar="changeTar" scrollViewBorderStyle="" scrollViewHeightStyle=""></tar-swiper-header>
 		<view class="uni-tab-bar">
 			<swiper class="swiper-box" :current="tarIndex" :style="{ height: swiperHeight + 'px' }" @change="tabChange">
 				<swiper-item v-for="(items, index) in itemList" :key="index">

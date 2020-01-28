@@ -1,8 +1,8 @@
 <template>
 	<view class="uni-tab-bar">
-		<scroll-view class="uni-swiper-tab" scroll-x :show-scrollbar="false">
+		<scroll-view class="uni-swiper-tab" scroll-x :show-scrollbar="false" :style="scrollViewBorderStyle">
 			<block v-for="(tar, index) in tabBars" :key="index">
-				<view class="swiper-tab-list" @tap="changeTar(index)">
+				<view class="swiper-tab-list" @tap="changeTar(index)" :style="scrollViewHeightStyle">
 					{{ tar.name }}
 					<view :class="{ 'swiper-active': index === tarIndex }"></view>
 				</view>
@@ -13,9 +13,11 @@
 
 <script>
 	export default {
-		props:[
+		props: [
 			'tabBars',
-			'tarIndex'
+			'tarIndex',
+			'scrollViewBorderStyle',
+			'scrollViewHeightStyle'
 		],
 		methods: {
 			changeTar(index) {
@@ -36,7 +38,7 @@
 	.swiper-active {
 		border-top: 2px solid #fafa00;
 		border-bottom: 2px solid #fafa00;
-		width: 60%;
+		width: 30%;
 		margin: auto;
 	}
 </style>

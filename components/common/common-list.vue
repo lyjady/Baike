@@ -54,18 +54,24 @@
 
 <script>
 export default {
-	props: ['commonList'],
+	props: [
+		'commonList',
+		'listIndex'
+		],
 	methods: {
 		attention(isAttention, index) {
-			console.log('123');
-			this.$emit('attentionUser', isAttention, index);
+			this.$emit('attentionUser', isAttention, index, this.listIndex);
 		}
-	},
+	}
 	
 };
 </script>
 
 <style lang="less" scoped>
+	
+	.item-user-info {
+		height: 49upx;
+	}
 	
 .common-list {
 	.common-item {

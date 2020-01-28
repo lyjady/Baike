@@ -1,5 +1,5 @@
 <template>
-	<view class="topic-item animated fadeIn fast" @tap="jump">
+	<view class="topic-item animated fadeIn fast" @tap="jumpTopicDetail">
 		<view class="item-avatar">
 			<image :src="topic.avatar" mode="scaleToFill" lazy-load></image>
 		</view>
@@ -24,8 +24,10 @@
 			'index'
 		],
 		methods: {
-			jump() {
-				this.$emit('jumpTopicDetail');
+			jumpTopicDetail() {
+				uni.navigateTo({
+					url: '../topic-detail/topic-detail'
+				})
 			}
 		}
 	}

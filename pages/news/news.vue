@@ -34,7 +34,7 @@
 						<view class="topic-list">
 							<view>最近更新</view>
 							<block v-for="(topic, index) in topicList" :key="index">
-								<topic-list :topic="topic" :index="index" @jumpTopicDetail="jumpTopicDetail"></topic-list>
+								<topic-list :topic="topic" :index="index"></topic-list>
 							</block>
 						</view>
 					</scroll-view>
@@ -232,11 +232,6 @@ export default {
 		jumpTopicNav() {
 			uni.navigateTo({
 				url: '/pages/topic-nav/topic-nav'
-			})
-		},
-		jumpTopicDetail() {
-			uni.navigateTo({
-				url: '../topic-detail/topic-detail'
 			})
 		}
 	},
