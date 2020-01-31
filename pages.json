@@ -57,6 +57,7 @@
             "style" : {
 				"navigationBarTitleText": "小纸条",
 				"app-plus": {
+					"enablePullDownRefresh": true,
 					"titleNView": {
 						"buttons": [
 							{
@@ -167,6 +168,60 @@
 						"buttons": [
 							{
 								"type": "menu"
+							}
+						]
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/user-list/user-list",
+            "style" : {
+				"app-plus": {
+					"animationType": "slide-in-left",
+					"titleNView": {
+						"searchInput": {
+							//非输入状态下文本的对齐方式。可取值： "left" - 居左对齐； "right" - 居右对齐； "center" - 居中对齐。
+							"align": "left",
+							//背景颜色
+							"backgroundColor": "#f0f0f0",
+							//输入框的圆角半径
+							"borderRadius": "4px",
+							//提示文本
+							"placeholder": "搜索好友",
+							//提示文本颜色
+							"placeholderColor": "#CCCCCC",
+							//是否可输入
+							"disabled": false
+						},
+						"buttons": [
+							{
+								"color": "#000000",
+								"colorPressed": "#BBBBBB",
+								"float": "right",
+								"fontSize": "16px",
+								"fontSrc": "/static/font/icon.ttf",
+								"text": "取消"
+							}
+						]
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/user-chat/user-chat",
+            "style" : {
+				"navigationBarTitleText": "聊天页",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [
+							{
+								"color": "#000000",
+								"colorPressed": "#BBBBBB",
+								"float": "right",
+								"fontSize": "16px",
+								"fontSrc": "/static/font/icon.ttf",
+								"text": "\ue628"
 							}
 						]
 					}

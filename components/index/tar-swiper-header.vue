@@ -3,7 +3,7 @@
 		<scroll-view class="uni-swiper-tab" scroll-x :show-scrollbar="false" :style="scrollViewBorderStyle">
 			<block v-for="(tar, index) in tabBars" :key="index">
 				<view class="swiper-tab-list" @tap="changeTar(index)" :style="scrollViewHeightStyle">
-					{{ tar.name }}
+					{{ tar.name }} {{ tar.num ? tar.num : '' }}
 					<view :class="{ 'swiper-active': index === tarIndex }"></view>
 				</view>
 			</block>
@@ -33,6 +33,7 @@
 	}
 	
 	.swiper-tab-list {
+		font-weight: bolder;
 	}
 	
 	.swiper-active {

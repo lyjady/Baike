@@ -1,5 +1,5 @@
 <template>
-	<view class="paper-item u-f">
+	<view class="paper-item u-f" @tap="jumpChatPage">
 		<view class="paper-item-right">
 			<image :src="paper.avatar" lazy-load></image>
 		</view>
@@ -32,6 +32,13 @@
 		],
 		components: {
 			uniBadge
+		},
+		methods: {
+			jumpChatPage() {
+				uni.navigateTo({
+					url: '../../pages/user-chat/user-chat'
+				})
+			}
 		}
 	}
 </script>
