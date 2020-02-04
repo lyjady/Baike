@@ -1,5 +1,5 @@
 <template>
-	<view class="item animated fadeIn fast">
+	<view class="item animated fadeIn fast" @tap="jumpDetail">
 		<view class="item-header">
 			<view class="item-header-left">
 				<!-- 头像 -->
@@ -16,7 +16,7 @@
 		</view>
 		<view class="item-info">
 			<!-- 内容 -->
-			<text class="content">{{ item.content }}!</text>
+			<text class="content">{{ item.content }}</text>
 			<!-- 图片 -->
 			<template v-if="item.mediaType === 'photo'">
 				<view class="item-info-content">
@@ -55,6 +55,11 @@
 			}
 		},
 		methods: {
+			jumpDetail() {
+				uni.navigateTo({
+					url: '../../pages/detail/detail?item=' + JSON.stringify(this.item)
+				})
+			},
 			attention(isAttention) {
 				this.isAttention = !isAttention;
 				uni.showToast({

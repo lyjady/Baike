@@ -1,11 +1,13 @@
 <template>
 	<view>
 		<view class="chat-list">
-			<block v-for="(chat, index) in chatList" :key="index">
-				<user-chat-list :chat="chat" :index="index"></user-chat-list>
-			</block>
+			<scroll-view scroll-y :scroll-top="scrollTop" :style="{height: currentHeight + 'px'}" scroll-with-animation>
+				<block v-for="(chat, index) in chatList" :key="index">
+					<user-chat-list class="chat-view" :chat="chat" :index="index"></user-chat-list>
+				</block>
+			</scroll-view>
 		</view>
-		<user-chat-bottom @submit="submit"></user-chat-bottom>
+		<user-chat-bottom ref="bottomBtnRef" id="bottom-btn" :content="content" @submit="submit"></user-chat-bottom>
 	</view>
 </template>
 
@@ -21,13 +23,29 @@ export default {
 	data() {
 		return {
 			content: '',
-			chatList: []
+			chatList: [],
+			currentHeight: 0,
+			allChatViewHeight: 0,
+			scrollTop: 0
 		};
 	},
 	methods: {
 		submit(content) {
-			console.log('收到子组件的数据' + content);
-			this.content = content;
+			if (content.length > 0) {
+				this.content = content;
+				let chat = {
+					avatar: '/static/demo/userpic/6.jpg',
+					content: this.content,
+					sendTime: new Date().getTime(),
+					isImage: false,
+					image: '',
+					isMe: true,
+					formatTime: time.gettime.getChatTime(new Date().getTime(), this.chatList[this.chatList.length - 1].sendTime)
+				}
+				this.chatList.push(chat);
+				this.content = '';
+				this.computerChatViewHeight();
+			}
 		},
 		getChatData() {
 			let list = [
@@ -68,10 +86,34 @@ export default {
 				chat.formatTime = time.gettime.getChatTime(chat.sendTime, index > 0 ? list[index - 1].sendTime : 0)
 			})
 			this.chatList = list;
+		},
+		computerPageHeight() {
+			uni.getSystemInfo({
+				success: res => {
+					this.currentHeight = res.windowHeight - uni.upx2px(100);
+				}
+			})
+		},
+		computerChatViewHeight() {
+			let selectorQuery = uni.createSelectorQuery();
+			selectorQuery.selectAll('.chat-item').boundingClientRect().exec(res => {
+				let allHeight = 0;
+				res[0].forEach(item => {
+					allHeight += item.height;
+				})
+				this.allChatViewHeight = allHeight;
+				if (this.allChatViewHeight > this.currentHeight) {
+					this.scrollTop = this.allChatViewHeight;
+				}
+			});
 		}
 	},
 	onLoad() {
 		this.getChatData();
+	},
+	onReady() {
+		this.computerPageHeight();
+		this.computerChatViewHeight();
 	}
 };
 </script>

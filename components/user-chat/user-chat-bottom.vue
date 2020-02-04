@@ -13,6 +13,9 @@
 
 <script>
 	export default {
+		props:[
+			'conetnt'
+		],
 		data() {
 			return {
 				content: ''
@@ -21,6 +24,7 @@
 		methods: {
 			sendContent() {
 				this.$emit('submit', this.content);
+				this.content = '';
 			}
 		}
 	}

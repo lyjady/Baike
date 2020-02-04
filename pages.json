@@ -84,7 +84,17 @@
         {
             "path" : "pages/home/home",
             "style" : {
-				"navigationBarTitleText": "我的"
+				"navigationBarTitleText": "我的",
+				"app-plus": {
+					"scrollIndicator": "none",
+					"titleNView": {
+						"buttons": [
+							{
+								"type": "menu"
+							}
+						]
+					}
+				}
 			}
         },
 		{
@@ -99,6 +109,7 @@
         ,{
             "path" : "pages/search/search",
             "style" : {
+				"enablePullDownRefresh": true,
 				"app-plus": {
 					//滚动条显示策略，设置为 "none" 时不显示滚动条。
 					"scrollIndicator": "none",
@@ -222,6 +233,22 @@
 								"fontSize": "16px",
 								"fontSrc": "/static/font/icon.ttf",
 								"text": "\ue628"
+							}
+						]
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/detail/detail",
+            "style" : {
+				"navigationBarTitleText": "内容页",
+				"app-plus": {
+					"scrollIndicator": "none",
+					"titleNView": {
+						"buttons": [
+							{
+								"type": "menu"
 							}
 						]
 					}
