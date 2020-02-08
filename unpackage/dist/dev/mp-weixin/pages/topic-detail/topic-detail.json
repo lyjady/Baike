@@ -1,0 +1,9 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "topic-info": "/components/topic/topic-info",
+    "tar-swiper-header": "/components/index/tar-swiper-header",
+    "loading-more": "/components/index/loading-more",
+    "common-list": "/components/common/common-list"
+  }
+}

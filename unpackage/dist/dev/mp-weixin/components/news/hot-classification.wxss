@@ -1,0 +1,22 @@
+
+.hot-classification.data-v-10008147 {
+	border-top: 1px solid #EEEEEE;
+	border-bottom: 1px solid #EEEEEE;
+	padding: 20rpx 15rpx 20rpx 15rpx;
+}
+.hot-classification-head.data-v-10008147, .hot-classification-content.data-v-10008147 {
+	margin-bottom: 20rpx;
+}
+.head-right.data-v-10008147 {
+	color: #D6D6D6;
+}
+.content-tag.data-v-10008147 {
+	background-color: #F7F7F7;
+	border-radius: 10rpx;
+	width: 110rpx;
+	height: 70rpx;
+	color: #A2A2A2;
+	margin-left: 10rpx;
+	margin-right: 10rpx;
+}
+

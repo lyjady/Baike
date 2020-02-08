@@ -1,0 +1,29 @@
+.paper-item.data-v-617a214d {
+  border-bottom: 1px solid #EEEEEE;
+}
+.paper-item-left.data-v-617a214d {
+  width: 100%;
+}
+.paper-item-right.data-v-617a214d {
+  margin-right: 20rpx;
+}
+.paper-item-right image.data-v-617a214d {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.paper-item-left-head-username.data-v-617a214d {
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.paper-item-left-footer-content.data-v-617a214d {
+  color: #999999;
+}
+.paper-item-left-head-send-time.data-v-617a214d {
+  color: #CBCBCB;
+}
+.paper-item.data-v-617a214d {
+  padding-bottom: 10rpx;
+  margin-bottom: 20rpx;
+}
+

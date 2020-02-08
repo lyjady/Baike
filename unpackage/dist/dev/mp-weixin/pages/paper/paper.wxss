@@ -1,0 +1,25 @@
+.paper-list.data-v-7b61c750 {
+  padding: 20rpx;
+}
+.option-menu.data-v-7b61c750 {
+  position: fixed;
+  right: 0;
+  top: 10rpx;
+  background-color: #FFFFFF;
+  box-shadow: 1rpx 1rpx 20rpx 2rpx #CCCCCC;
+  z-index: 1999;
+  width: 40%;
+  padding: 20rpx;
+}
+.option-menu view.data-v-7b61c750 {
+  font-weight: bolder;
+}
+.papar-left-popup-mask.data-v-7b61c750 {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1998;
+}
+

@@ -1,0 +1,9 @@
+.u-comment.data-v-3c5e4dd4 {
+  padding: 0 20rpx;
+}
+.u-comment-title.data-v-3c5e4dd4 {
+  padding: 20rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+

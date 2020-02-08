@@ -1,12 +1,28 @@
 .permission.data-v-34dff386 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  margin: auto;
+}
+.textarea-content.data-v-34dff386 {
+  border: 1px solid #eeeeee;
+  overflow-x: hidden;
+  height: 200rpx;
+}
+.release-rules.data-v-34dff386 {
+  background-color: #FFFFFF;
+  padding: 20rpx;
+  border-radius: 10px;
+}
+.release-rules image.data-v-34dff386 {
+  margin: auto;
+  display: block;
+  width: 70%;
+}
+.release-rules text.data-v-34dff386 {
+  margin-bottom: 5px;
+  display: block;
+}
+.release-rules button.data-v-34dff386 {
+  display: block;
+  margin-top: 5px;
+  background-color: #FFE934;
 }
 

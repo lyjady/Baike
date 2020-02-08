@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "内容页",
+  "usingComponents": {
+    "detail-info": "/components/detail/detail-info",
+    "detail-comment": "/components/detail/detail-comment",
+    "user-chat-bottom": "/components/user-chat/user-chat-bottom",
+    "more-share": "/components/common/more-share"
+  }
+}

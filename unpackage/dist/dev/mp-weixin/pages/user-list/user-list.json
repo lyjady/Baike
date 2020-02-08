@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tar-swiper-header": "/components/index/tar-swiper-header",
+    "user-list": "/components/paper/user-list",
+    "loading-more": "/components/index/loading-more",
+    "nothing": "/components/common/nothing"
+  }
+}

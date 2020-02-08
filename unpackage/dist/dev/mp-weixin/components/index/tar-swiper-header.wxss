@@ -3,11 +3,12 @@
 	border-bottom: none;
 }
 .swiper-tab-list.data-v-1805ff02 {
+	font-weight: bolder;
 }
 .swiper-active.data-v-1805ff02 {
 	border-top: 2px solid #fafa00;
 	border-bottom: 2px solid #fafa00;
-	width: 60%;
+	width: 30%;
 	margin: auto;
 }
 

@@ -8,8 +8,8 @@
 						<view class="topic-list">
 							<template v-if="users.list.length > 0">
 								<view class="user-list">
-									<block v-for="(user, index) in users.list" :key="index">
-										<user-list :user="user" :index="index"></user-list>
+									<block v-for="(user, index2) in users.list" :key="index2">
+										<user-list :user="user" :index="index2"></user-list>
 									</block>
 								</view>
 								<loading-more :loadingMoreInfo="loadingMoreInfo"></loading-more>

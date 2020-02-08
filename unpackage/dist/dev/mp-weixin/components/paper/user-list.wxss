@@ -1,0 +1,45 @@
+.user-item.data-v-4df9a97c {
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+}
+.user-item .user-avatar.data-v-4df9a97c {
+  width: 20%;
+}
+.user-item image.data-v-4df9a97c {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 100%;
+}
+.user-item-right.data-v-4df9a97c {
+  width: 80%;
+}
+.user-sex.data-v-4df9a97c {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  width: 80rpx;
+}
+.tag-sex.data-v-4df9a97c {
+  border-radius: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 0 8px 0 8px;
+  line-height: 18px;
+}
+.man.data-v-4df9a97c {
+  background-color: #44b3ff;
+}
+.woman.data-v-4df9a97c {
+  background-color: #ff698d;
+}
+.username.data-v-4df9a97c {
+  margin-bottom: 10rpx;
+}
+.item-option.data-v-4df9a97c {
+  color: #cccccc;
+}
+.attation.data-v-4df9a97c {
+  color: #f8791b;
+}
+

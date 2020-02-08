@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "小纸条",
-  "usingComponents": {}
+  "usingComponents": {
+    "paper-list": "/components/paper/paper-list",
+    "loading-more": "/components/index/loading-more"
+  }
 }

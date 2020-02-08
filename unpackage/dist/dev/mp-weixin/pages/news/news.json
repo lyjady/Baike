@@ -1,4 +1,11 @@
 {
   "navigationBarTitleText": "动态",
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "common-list": "/components/common/common-list",
+    "news-nav-bar": "/components/news/news-nav-bar",
+    "loading-more": "/components/index/loading-more",
+    "hot-classification": "/components/news/hot-classification",
+    "topic-list": "/components/news/topic-list"
+  }
 }

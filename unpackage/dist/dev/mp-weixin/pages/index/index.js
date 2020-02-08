@@ -140,7 +140,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var itemList = function itemList() {return __webpack_require__.e(/*! import() | components/index/item-list */ "components/index/item-list").then(__webpack_require__.bind(null, /*! ../../components/index/item-list.vue */ 53));};var tarSwiperHeader = function tarSwiperHeader() {return __webpack_require__.e(/*! import() | components/index/tar-swiper-header */ "components/index/tar-swiper-header").then(__webpack_require__.bind(null, /*! ../../components/index/tar-swiper-header.vue */ 60));};var loadingMore = function loadingMore() {return __webpack_require__.e(/*! import() | components/index/loading-more */ "components/index/loading-more").then(__webpack_require__.bind(null, /*! ../../components/index/loading-more.vue */ 67));};var nothing = function nothing() {return __webpack_require__.e(/*! import() | components/common/nothing */ "components/common/nothing").then(__webpack_require__.bind(null, /*! ../../components/common/nothing.vue */ 74));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var itemList = function itemList() {return __webpack_require__.e(/*! import() | components/index/item-list */ "components/index/item-list").then(__webpack_require__.bind(null, /*! ../../components/index/item-list.vue */ 106));};var tarSwiperHeader = function tarSwiperHeader() {return __webpack_require__.e(/*! import() | components/index/tar-swiper-header */ "components/index/tar-swiper-header").then(__webpack_require__.bind(null, /*! ../../components/index/tar-swiper-header.vue */ 113));};var loadingMore = function loadingMore() {return __webpack_require__.e(/*! import() | components/index/loading-more */ "components/index/loading-more").then(__webpack_require__.bind(null, /*! ../../components/index/loading-more.vue */ 120));};var nothing = function nothing() {return __webpack_require__.e(/*! import() | components/common/nothing */ "components/common/nothing").then(__webpack_require__.bind(null, /*! ../../components/common/nothing.vue */ 127));};var _default =
 
 
 
@@ -463,7 +463,7 @@ __webpack_require__.r(__webpack_exports__);
       this.tarIndex = e.detail.current;
     },
     loadingMore: function loadingMore(index) {var _this2 = this;
-      if (this.loadingMoreInfo === '加载中...') {
+      if (this.loadingMoreInfo !== '上拉加载更多') {
         return;
       }
       this.loadingMoreInfo = '加载中...';

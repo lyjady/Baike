@@ -1,1 +1,1 @@
-<view></view>
+<view><block wx:if="{{!isSearch}}"></block><block wx:else><block wx:if="{{searchList.length>0}}"><block wx:for="{{searchList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><block><index-list vue-id="{{'1-'+index}}" item="{{item}}" bind:__l="__l"></index-list></block></block><loading-more vue-id="2" loadingMoreInfo="{{loadingMoreInfo}}" bind:__l="__l"></loading-more></block><block wx:else><block wx:if="{{isSearch&&searchList.length===0}}"><nothing vue-id="3" bind:__l="__l"></nothing></block></block></block></view>
