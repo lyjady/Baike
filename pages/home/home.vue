@@ -10,7 +10,7 @@
 				<other-login></other-login>
 			</view>
 			<view class="local-login u-f-ajc">
-				<view class="account-login">
+				<view class="account-login" @tap="jumpLoginPage">
 					账号密码登录
 				</view>
 				<view class="icon iconfont icon-jinru">
@@ -95,7 +95,11 @@
 			}
 		},
 		methods: {
-			
+			jumpLoginPage() {
+				uni.navigateTo({
+					url: '../login/login'
+				})
+			}
 		},
 		onNavigationBarButtonTap(e) {
 			if (e.index === 0) {

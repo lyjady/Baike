@@ -1,14 +1,18 @@
 <template>
 	<view class="other-login u-f-ajc">
-		<view class="icon iconfont icon-weixin login u-f-ajc"></view>
-		<view class="icon iconfont icon-QQ login u-f-ajc"></view>
-		<view class="icon iconfont icon-xinlangweibo login u-f-ajc"></view>
+		<view class="icon iconfont icon-weixin login u-f-ajc" @tap="login(3)"></view>
+		<view class="icon iconfont icon-QQ login u-f-ajc" @tap="login(0)"></view>
+		<view class="icon iconfont icon-xinlangweibo login u-f-ajc" @tap="login(2)"></view>
 	</view>
 </template>
 
 <script>
 	export default {
-		
+		methods: {
+			login(index) {
+				this.$emit('otherLogin', index)
+			}
+		}
 	}
 </script>
 

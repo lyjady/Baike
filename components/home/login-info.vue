@@ -1,8 +1,8 @@
 <template>
 	<view>
-		<view class="login-info">
+		<view class="login-info" @tap="jumpUserSpace">
 			<view class="login-left">
-				<view class="u-f-ajc">
+				<view class="u-f-ajc" >
 					<image :src="loginInfo.avatar" lazy-load></image>
 				</view>
 			</view>
@@ -28,7 +28,14 @@
 	export default {
 		props: [
 			'loginInfo'
-		]
+		],
+		methods: {
+			jumpUserSpace() {
+				uni.navigateTo({
+					url: '../../pages/user-space/user-space'
+				})
+			}
+		}
 	}
 </script>
 

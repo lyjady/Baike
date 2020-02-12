@@ -56,7 +56,11 @@
 				<view class="item-center u-f-ac">
 					<view class="item-center-content">
 						<view></view>
-						<text>{{ birthday }}</text>
+						<view>
+							<picker mode="date" :value="birthday" :start="startDate" :end="endDate" @change="bindDateChange">
+							    <view>{{ birthday }}</view>
+							</picker>
+						</view>
 					</view>
 				</view>
 				<view class="item-right u-f-ajc">
@@ -76,7 +80,7 @@
 					</view>
 				</view>
 				<view class="item-right u-f-ajc">
-					<view class="icon iconfont icon-bianji1">
+					<view class="icon iconfont icon-bianji1" @tap="change('qg', ['未婚', '已婚'])">
 						
 					</view>
 				</view>
@@ -88,7 +92,7 @@
 				<view class="item-center u-f-ac">
 					<view class="item-center-content">
 						<view></view>
-						<text>{{ job }}</text>
+						<input class="uni-input" type="text" v-model="job"/>
 					</view>
 				</view>
 				<view class="item-right u-f-ajc">
@@ -104,7 +108,7 @@
 				<view class="item-center u-f-ac">
 					<view class="item-center-content">
 						<view></view>
-						<text>{{ motherhome }}</text>
+						<text @tap="showMulLinkageThreePicker">{{ motherhome }}</text>
 					</view>
 				</view>
 				<view class="item-right u-f-ajc">
@@ -115,11 +119,16 @@
 			</view>
 		</view>
 		<button class="success-btn">完成</button>
+		<mpvue-city-picker themeColor="#007AFF" ref="mpvueCityPicker" :pickerValueDefault="cityPickerValueDefault" @onConfirm="onConfirm"></mpvue-city-picker>
 	</view>
 </template>
 
 <script>
+	import mpvueCityPicker from '../../components/mpvue-citypicker/mpvueCityPicker.vue'
 	export default {
+		components: {
+			mpvueCityPicker
+		},
 		data() {
 			return {
 				nickname: '楚青',
@@ -128,6 +137,7 @@
 				qg: '未婚',
 				job: 'IT',
 				motherhome: '福建福州',
+				cityPickerValueDefault: [0, 1, 1],
 				avatar: '../../static/demo/datapic/21.jpg'
 			};
 		},
@@ -141,6 +151,30 @@
 					})
 				})
 			},
+			showMulLinkageThreePicker() {
+				this.$refs.mpvueCityPicker.show();
+			},
+			onConfirm(e) {
+				let arr = e.label.split('-');
+				this.motherhome = arr[0].substring(0, arr[0].length - 1) + arr[1].substring(0, arr[1].length - 2);
+			},
+			getDate(type) {
+			    const date = new Date();
+			    let year = date.getFullYear();
+			    let month = date.getMonth() + 1;
+			    let day = date.getDate();
+			    if (type === 'start') {
+			        year = year - 60;
+			    } else if (type === 'end') {
+			        year = year + 2;
+			    }
+			    month = month > 9 ? month : '0' + month;;
+			    day = day > 9 ? day : '0' + day;
+			    return `${year}-${month}-${day}`;
+			},
+			bindDateChange(e) {
+				this.birthday = e.detail.value
+			},
 			change(changeTpye, editOpt) {
 				switch(changeTpye) {
 					case 'sex': 
@@ -151,9 +185,36 @@
 							})
 						})
 						break;
+					case 'qg': 
+						uni.showActionSheet({
+							itemList: editOpt,
+							success: (res => {
+								this.qg = editOpt[res.tapIndex]
+							})
+						})
+						break;
 					default: 
 						break;
 				}
+			}
+		},
+		computed: {
+			startDate() {
+			    return this.getDate('start');
+			},
+			endDate() {
+			    return this.getDate('end');
+			}
+		},
+		onBackPress() {
+			if (this.$refs.mpvueCityPicker.showPicker) {
+				this.$refs.mpvueCityPicker.pickerCancel();
+				return true;
+			}
+		},
+		onUnload() {
+			if (this.$refs.mpvueCityPicker.showPicker) {
+				this.$refs.mpvueCityPicker.pickerCancel()
 			}
 		}
 	}

@@ -52,13 +52,13 @@
 						name: '意见反馈',
 						needLogin: true,
 						routerType: 'navigateTo',
-						url : ''
+						url : '../feedback/feedback'
 					},
 					{
 						name: '关于百科',
 						needLogin: true,
 						routerType: 'navigateTo',
-						url : ''
+						url : '../about/about'
 					}
 				],
 				isLogin: true

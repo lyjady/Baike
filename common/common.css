@@ -13,3 +13,7 @@
 .u-f-jsb {
 	justify-content: space-between;
 }
+
+.container {
+	padding: 0 30upx;
+}
