@@ -31,6 +31,21 @@
 							url: this.option.url
 						});
 						break;
+					case 'clearCache': 
+						uni.showModal({
+							cancelText: '取消',
+							confirmText: '清空缓存',
+							content: '是否要清空缓存',
+							success: res => {
+								if (res.confirm) {
+									uni.clearStorage();
+									uni.showToast({
+										title: '缓存清除成功'
+									})
+								}
+							}
+						})
+						break;
 					default: 
 						break;
 				}

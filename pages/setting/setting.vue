@@ -45,8 +45,7 @@
 					{
 						name: '清除缓存',
 						needLogin: true,
-						routerType: 'navigateTo',
-						url : ''
+						routerType: 'clearCache'
 					},
 					{
 						name: '意见反馈',

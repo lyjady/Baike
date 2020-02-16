@@ -2,9 +2,11 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
+			this.$networkUtils.network.listenNetworkChange();
 		},
 		onShow: function() {
 			console.log('App Show')
+			this.$networkUtils.network.on();
 		},
 		onHide: function() {
 			console.log('App Hide')
