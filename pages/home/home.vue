@@ -36,6 +36,8 @@
 				<option-list :option="option" :index="index" :isLogin="isLogin"></option-list>
 			</block>
 		</view>
+		<button type="primary" @tap="connectWs">WebSocket</button>
+		<button type="primary" @tap="closeConnect">WebSocket Close</button>
 	</view>
 </template>
 
@@ -85,7 +87,7 @@
 						url : ''
 					}
 				],
-				isLogin: true,
+				isLogin: false,
 				loginInfo: {
 					avatar: '../../static/demo/datapic/21.jpg',
 					nickname: '楚青',
@@ -99,20 +101,26 @@
 				uni.navigateTo({
 					url: '../login/login'
 				})
+			},
+			connectWs() {
+				uni.connectSocket({
+					url: 'ws://192.168.0.108:8080/baike/wsServer/2',
+					success: () => {}
+				})
+				uni.onSocketOpen(() => {
+					console.log('connect success')
+				})
+				
+				uni.onSocketMessage(res => {
+					console.log("服务器的数据: " + res.data)
+				})
+			},
+			closeConnect() {
+				uni.closeSocket()
 			}
 		},
 		onNavigationBarButtonTap(e) {
-			if (e.index === 0) {
-				if (!this.isLogin) {
-					uni.showModal({
-						content: '请先登录'
-					})
-					return;
-				}
-				uni.navigateTo({
-					url: '../setting/setting'
-				})
-			}
+			this.userValida.navivateCheck({url: '../setting/setting'})
 		}
 	}
 </script>

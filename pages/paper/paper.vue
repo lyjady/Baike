@@ -207,10 +207,7 @@
 		onNavigationBarButtonTap(e) {
 			switch(e.index) {
 				case 0: 
-					this.isShow = false;
-					uni.navigateTo({
-						url: '../user-list/user-list'
-					})
+					this.userValida.navivateCheck({url: '../user-list/user-list'})
 					break;
 				case 1: 
 					this.isShow = !this.isShow;

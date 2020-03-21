@@ -246,7 +246,7 @@ export default {
 	onLoad() {
 		uni.getSystemInfo({
 			success: res => {
-				this.swiperHeight = res.windowHeight - uni.upx2px(200);
+				this.swiperHeight = res.windowHeight - uni.upx2px(100);
 			}
 		});
 	}

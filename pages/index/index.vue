@@ -4,10 +4,13 @@
 		<view class="uni-tab-bar">
 			<swiper class="swiper-box" :current="tarIndex" :style="{ height: swiperHeight + 'px' }" @change="tabChange">
 				<swiper-item v-for="(items, index) in itemList" :key="index">
-					<scroll-view class="list" scroll-y @scrolltolower="loadingMore(index)">
+					<scroll-view class="list" scroll-y @scrolltolower="loadingMore()">
 						<template v-if="items.list.length > 0">
 							<block v-for="(item, index2) in items.list" :key="index2"><item-list :item="item"></item-list></block>
-							<loading-more :loadingMoreInfo="loadingMoreInfo"></loading-more>
+							<loading-more :loadingMoreInfo="items.loadText"></loading-more>
+						</template>
+						<template v-else-if="items.firstLoad">
+							<view style="font-size: 50upx;font-weight: bold;color: #CCCCCC; padding-top: 100upx;" class="u-f-ajc">Loading ...</view>
 						</template>
 						<template v-else>
 							<nothing></nothing>
@@ -30,276 +33,66 @@ export default {
 			itemList: [
 				{
 					list: [
-						{
-							id: '1',
-							avatar: '/static/demo/userpic/10.jpg',
-							nickname: '小脑袋大吉吉',
-							isAttention: false,
-							content: '震惊,一高校男子在校内草地上将校花强奸!!!!!!!!!!!',
-							mediaType: 'photo',
-							videoInfo: '',
-							contentRef: '/static/demo/datapic/11.jpg',
-							infoNum: {
-								//0: 没有操作, 1: 赞, 2: 踩
-								index: 1,
-								praiseNum: 298,
-								caiNum: 30
-							},
-							commentNum: 6598,
-							shareNum: 236
-						},
-						{
-							id: '2',
-							avatar: '/static/demo/userpic/11.jpg',
-							nickname: '大脑袋小吉吉',
-							isAttention: true,
-							content: '震惊,光天化日居然发生了群交!!!!!!!!!!!',
-							mediaType: 'video',
-							videoInfo: '20w次播放 2:47',
-							contentRef: '/static/demo/datapic/12.jpg',
-							infoNum: {
-								//0: 没有操作, 1: 赞, 2: 踩
-								index: 2,
-								praiseNum: 1258,
-								caiNum: 32
-							},
-							commentNum: 9854,
-							shareNum: 6589
-						}
-					]
+						
+					],
+					pageNumber: 1,
+					loadText: '上拉加载更多',
+					firstLoad: true
 				},
 				{
 					list: [
-						{
-							id: '1',
-							avatar: '/static/demo/userpic/10.jpg',
-							nickname: '小脑袋大吉吉',
-							isAttention: false,
-							content: '震惊,一高校男子在校内草地上将校花强奸!!!!!!!!!!!',
-							mediaType: 'photo',
-							videoInfo: '',
-							contentRef: '/static/demo/datapic/11.jpg',
-							infoNum: {
-								//0: 没有操作, 1: 赞, 2: 踩
-								index: 1,
-								praiseNum: 298,
-								caiNum: 30
-							},
-							commentNum: 6598,
-							shareNum: 236
-						},
-						{
-							id: '2',
-							avatar: '/static/demo/userpic/11.jpg',
-							nickname: '大脑袋小吉吉',
-							isAttention: true,
-							content: '震惊,光天化日居然发生了群交!!!!!!!!!!!',
-							mediaType: 'video',
-							videoInfo: '20w次播放 2:47',
-							contentRef: '/static/demo/datapic/12.jpg',
-							infoNum: {
-								//0: 没有操作, 1: 赞, 2: 踩
-								index: 2,
-								praiseNum: 1258,
-								caiNum: 32
-							},
-							commentNum: 9854,
-							shareNum: 6589
-						}
-					]
+						
+					],
+					pageNumber: 1,
+					loadText: '上拉加载更多',
+					firstLoad: true
 				},
 				{
 					list: [
-						{
-							id: '1',
-							avatar: '/static/demo/userpic/10.jpg',
-							nickname: '小脑袋大吉吉',
-							isAttention: false,
-							content: '震惊,一高校男子在校内草地上将校花强奸!!!!!!!!!!!',
-							mediaType: 'photo',
-							videoInfo: '',
-							contentRef: '/static/demo/datapic/11.jpg',
-							infoNum: {
-								//0: 没有操作, 1: 赞, 2: 踩
-								index: 1,
-								praiseNum: 298,
-								caiNum: 30
-							},
-							commentNum: 6598,
-							shareNum: 236
-						},
-						{
-							id: '2',
-							avatar: '/static/demo/userpic/11.jpg',
-							nickname: '大脑袋小吉吉',
-							isAttention: true,
-							content: '震惊,光天化日居然发生了群交!!!!!!!!!!!',
-							mediaType: 'video',
-							videoInfo: '20w次播放 2:47',
-							contentRef: '/static/demo/datapic/12.jpg',
-							infoNum: {
-								//0: 没有操作, 1: 赞, 2: 踩
-								index: 2,
-								praiseNum: 1258,
-								caiNum: 32
-							},
-							commentNum: 9854,
-							shareNum: 6589
-						}
-					]
+						
+					],
+					pageNumber: 1,
+					loadText: '上拉加载更多',
+					firstLoad: true
 				},
 				{
 					list: [
-						{
-							id: '1',
-							avatar: '/static/demo/userpic/10.jpg',
-							nickname: '小脑袋大吉吉',
-							isAttention: false,
-							content: '震惊,一高校男子在校内草地上将校花强奸!!!!!!!!!!!',
-							mediaType: 'photo',
-							videoInfo: '',
-							contentRef: '/static/demo/datapic/11.jpg',
-							infoNum: {
-								//0: 没有操作, 1: 赞, 2: 踩
-								index: 1,
-								praiseNum: 298,
-								caiNum: 30
-							},
-							commentNum: 6598,
-							shareNum: 236
-						},
-						{
-							id: '2',
-							avatar: '/static/demo/userpic/11.jpg',
-							nickname: '大脑袋小吉吉',
-							isAttention: true,
-							content: '震惊,光天化日居然发生了群交!!!!!!!!!!!',
-							mediaType: 'video',
-							videoInfo: '20w次播放 2:47',
-							contentRef: '/static/demo/datapic/12.jpg',
-							infoNum: {
-								//0: 没有操作, 1: 赞, 2: 踩
-								index: 2,
-								praiseNum: 1258,
-								caiNum: 32
-							},
-							commentNum: 9854,
-							shareNum: 6589
-						}
-					]
+						
+					],
+					pageNumber: 1,
+					loadText: '上拉加载更多',
+					firstLoad: true
 				},
 				{
 					list: [
-						{
-							id: '1',
-							avatar: '/static/demo/userpic/10.jpg',
-							nickname: '小脑袋大吉吉',
-							isAttention: false,
-							content: '震惊,一高校男子在校内草地上将校花强奸!!!!!!!!!!!',
-							mediaType: 'photo',
-							videoInfo: '',
-							contentRef: '/static/demo/datapic/11.jpg',
-							infoNum: {
-								//0: 没有操作, 1: 赞, 2: 踩
-								index: 1,
-								praiseNum: 298,
-								caiNum: 30
-							},
-							commentNum: 6598,
-							shareNum: 236
-						},
-						{
-							id: '2',
-							avatar: '/static/demo/userpic/11.jpg',
-							nickname: '大脑袋小吉吉',
-							isAttention: true,
-							content: '震惊,光天化日居然发生了群交!!!!!!!!!!!',
-							mediaType: 'video',
-							videoInfo: '20w次播放 2:47',
-							contentRef: '/static/demo/datapic/12.jpg',
-							infoNum: {
-								//0: 没有操作, 1: 赞, 2: 踩
-								index: 2,
-								praiseNum: 1258,
-								caiNum: 32
-							},
-							commentNum: 9854,
-							shareNum: 6589
-						}
-					]
+						
+					],
+					pageNumber: 1,
+					loadText: '上拉加载更多',
+					firstLoad: true
 				},
 				{
 					list: [
-						{
-							id: '1',
-							avatar: '/static/demo/userpic/10.jpg',
-							nickname: '小脑袋大吉吉',
-							isAttention: false,
-							content: '震惊,一高校男子在校内草地上将校花强奸!!!!!!!!!!!',
-							mediaType: 'photo',
-							videoInfo: '',
-							contentRef: '/static/demo/datapic/11.jpg',
-							infoNum: {
-								//0: 没有操作, 1: 赞, 2: 踩
-								index: 1,
-								praiseNum: 298,
-								caiNum: 30
-							},
-							commentNum: 6598,
-							shareNum: 236
-						},
-						{
-							id: '2',
-							avatar: '/static/demo/userpic/11.jpg',
-							nickname: '大脑袋小吉吉',
-							isAttention: true,
-							content: '震惊,光天化日居然发生了群交!!!!!!!!!!!',
-							mediaType: 'video',
-							videoInfo: '20w次播放 2:47',
-							contentRef: '/static/demo/datapic/12.jpg',
-							infoNum: {
-								//0: 没有操作, 1: 赞, 2: 踩
-								index: 2,
-								praiseNum: 1258,
-								caiNum: 32
-							},
-							commentNum: 9854,
-							shareNum: 6589
-						}
-					]
-				},
-				{
-					list: []
-				},
-				{
-					list: []
-				},
-				{
-					list: []
+						
+					],
+					pageNumber: 1,
+					loadText: '上拉加载更多',
+					firstLoad: true
 				}
 			],
-			tabBars: [
-				{ id: 1, name: '关注' },
-				{ id: 2, name: '推荐' },
-				{ id: 3, name: '体育' },
-				{ id: 4, name: '热点' },
-				{ id: 5, name: '财经' },
-				{ id: 6, name: '娱乐' },
-				{ id: 7, name: '游戏' },
-				{ id: 8, name: '历史' },
-				{ id: 9, name: '军事' }
-			],
+			tabBars: [],
 			tarIndex: 0,
-			swiperHeight: 0,
-			loadingMoreInfo: '上拉加载更多'
+			swiperHeight: 0
 		};
 	},
 	onLoad() {
 		uni.getSystemInfo({
 			success: res => {
-				this.swiperHeight = res.windowHeight - uni.upx2px(200);
+				this.swiperHeight = res.windowHeight - uni.upx2px(100);
 			}
 		});
+		this.getPostClass();
+		this.getPostList();
 	},
 	onNavigationBarSearchInputClicked() {
 		uni.navigateTo({
@@ -316,37 +109,73 @@ export default {
 	methods: {
 		changeTar(index) {
 			this.tarIndex = index;
+			this.getPostList();
 		},
 		tabChange(e) {
 			this.tarIndex = e.detail.current;
+			this.getPostList();
 		},
-		loadingMore(index) {
-			if (this.loadingMoreInfo !== '上拉加载更多') {
+		async getPostClass() {
+			let [err, res] = await this.$http.get('/post/getPostCategoryList');
+			let hasErr = this.$http.handleError(err, res);
+			if (!hasErr) {
+				console.log(res)
+				this.tabBars = res.data.data;
+				this.tabBars.forEach(item => {
+					item.name = item.classname;
+				})
+			} else {
+				return uni.showToast({
+					title: '加载失败',
+					icon: 'none'
+				})
+			}
+		},
+		async getPostList() {
+			let[err, res] = await this.$http.get('/post/findPostByPostClass/' + this.tarIndex + '/pageNumber/' + this.itemList[this.tarIndex].pageNumber);
+			let hasErr =  this.$http.handleError(err, res);
+			if (!hasErr) {
+				let postList = res.data.data;
+				postList.forEach(post => {
+					this.itemList[this.tarIndex].list.push(this.formatPostDate(post));
+				})
+				if (postList.length < 10) {
+					this.itemList[this.tarIndex].loadText = '没有更多数据了'
+				}
+				this.itemList[this.tarIndex].firstLoad = false;
+			}
+		},
+		formatPostDate(post) {
+			let index;
+			if (post.isUp === 0 && post.isDown === 0) {
+				index = 0;
+			} else if (post.isUp === 1) {
+				index = 1;
+			} else if (post.isDown === 1) {
+				index = 2;
+			}
+			return {
+				id: post.id,
+				avatar: post.user.userpic,
+				nickname: post.user.username,
+				content: post.content,
+				mediaType: 'photo',
+				contentRef: post.titlepic,
+				infoNum: {
+					index: index,
+					praiseNum: post.up,
+					caiNum: post.down
+				},
+				commentNum: post.comment,
+				shareNum: post.sharenum
+			}
+		},
+		loadingMore() {
+			if (this.itemList[this.tarIndex].loadText !== '上拉加载更多') {
 				return;
 			}
-			this.loadingMoreInfo = '加载中...';
-			let item = {
-				id: '2',
-				avatar: '/static/demo/userpic/11.jpg',
-				nickname: '大脑袋小吉吉',
-				isAttention: true,
-				content: '震惊,光天化日居然发生了群交!!!!!!!!!!!',
-				mediaType: 'video',
-				videoInfo: '20w次播放 2:47',
-				contentRef: '/static/demo/datapic/12.jpg',
-				infoNum: {
-					//0: 没有操作, 1: 赞, 2: 踩
-					index: 2,
-					praiseNum: 1258,
-					caiNum: 32
-				},
-				commentNum: 9854,
-				shareNum: 6589
-			};
-			setInterval(() => {
-				this.itemList[index].list.push(item);
-				this.loadingMoreInfo = '上拉加载更多';
-			}, 8000);
+			this.itemList[this.tarIndex].pageNumber++;
+			this.getPostList();
 		}
 	},
 	components: {
