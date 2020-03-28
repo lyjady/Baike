@@ -35,21 +35,21 @@
 						<view class="video-info">12:00</view>
 					</view>
 				</template>
-				<template v-else>
+				<!-- <template v-else>
 					<view class="item-share">
 						<view class="shareImage"><image :src="item.shareObj.shareImage" class="as" lazy-load></image></view>
 						<view class="share-content">{{ item.shareObj.shareContent }}</view>
 					</view>
-				</template>
+				</template> -->
 				<view class="item-other u-f u-f-jsb">
 					<view class="item-other-area">{{ item.area }}</view>
 					<view class="interactive-info u-f">
 						<view class="icon iconfont icon-zhuanfa"></view>
-						<view class="interactive-number">{{ item.share }}</view>
+						<view class="interactive-number">{{ item.shareNum }}</view>
 						<view class="icon iconfont icon-pinglun1"></view>
-						<view class="interactive-number">{{ item.comment }}</view>
+						<view class="interactive-number">{{ item.commentNum }}</view>
 						<view class="icon iconfont icon-dianzan"></view>
-						<view class="interactive-number">{{ item.like }}</view>
+						<view class="interactive-number">{{ item.infoNum.praiseNum }}</view>
 					</view>
 				</view>
 			</view>

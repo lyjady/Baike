@@ -1,6 +1,6 @@
 export default {
 	// 用户token
-	token: '1Jk5u2uiUCy9svCWz+5mVQ==',
+	token: 'kiHGaEbG8Fft95mxGDCdoA==',
 	// 用户信息
 	userInfo: false,
 	// 跳转权限验证

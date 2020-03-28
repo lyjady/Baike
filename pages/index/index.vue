@@ -119,7 +119,6 @@ export default {
 			let [err, res] = await this.$http.get('/post/getPostCategoryList');
 			let hasErr = this.$http.handleError(err, res);
 			if (!hasErr) {
-				console.log(res)
 				this.tabBars = res.data.data;
 				this.tabBars.forEach(item => {
 					item.name = item.classname;
@@ -156,6 +155,7 @@ export default {
 			}
 			return {
 				id: post.id,
+				userId: post.userId,
 				avatar: post.user.userpic,
 				nickname: post.user.username,
 				content: post.content,
@@ -167,7 +167,8 @@ export default {
 					caiNum: post.down
 				},
 				commentNum: post.comment,
-				shareNum: post.sharenum
+				shareNum: post.sharenum,
+				isAttention: post.attention
 			}
 		},
 		loadingMore() {

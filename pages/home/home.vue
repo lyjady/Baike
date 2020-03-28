@@ -36,8 +36,6 @@
 				<option-list :option="option" :index="index" :isLogin="isLogin"></option-list>
 			</block>
 		</view>
-		<button type="primary" @tap="connectWs">WebSocket</button>
-		<button type="primary" @tap="closeConnect">WebSocket Close</button>
 	</view>
 </template>
 

@@ -39,8 +39,9 @@ export default {
 		};
 	},
 	onLoad(e) {
+		console.log(e.item)
 		this.item = JSON.parse(e.item);
-		this.initData();
+		// this.initData();
 		uni.setNavigationBarTitle({
 			title: this.item.content
 		});

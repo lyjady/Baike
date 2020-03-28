@@ -1,5 +1,5 @@
 <template>
-	<view class="item animated fadeIn fast" @tap="jumpDetail">
+	<view class="item animated fadeIn fast">
 		<view class="item-header">
 			<view class="item-header-left">
 				<!-- 头像 -->
@@ -9,12 +9,12 @@
 			</view>
 			<template v-if="!isAttention">
 				<view class="item-header-right">
-					<view class="icon iconfont icon-zengjia" @tap="attention(isAttention)"><span>关注</span></view>
+					<view class="icon iconfont icon-zengjia" @tap="attention(item.userId)"><span>关注</span></view>
 					<view class="icon iconfont icon-guanbi"></view>
 				</view>
 			</template>
 		</view>
-		<view class="item-info">
+		<view class="item-info" @tap="jumpDetail">
 			<!-- 内容 -->
 			<text class="content">{{ item.content }}</text>
 			<!-- 图片 -->
@@ -46,6 +46,8 @@
 </template>
 
 <script>
+	import User from '../../common/userValida.js';
+	import config from '../../common/config.js';
 	export default {
 		props: ['item'],
 		data () {
@@ -60,11 +62,33 @@
 					url: '../../pages/detail/detail?item=' + JSON.stringify(this.item)
 				})
 			},
-			attention(isAttention) {
-				this.isAttention = !isAttention;
-				uni.showToast({
-					title: '关注成功'
-				})
+			async attention(userId) {
+				if (!User.token) {
+					uni.showToast({
+						title: '请先登录',
+						icon: 'none'
+					})
+					uni.navigateTo({url: '../../pages/login/login'});
+				} else {
+					uni.request({
+						url: config.api + '/social/attentionUser',
+						method: 'POST',
+						header: {
+							'Authenticate': User.token,
+							'Content-Type': 'application/json;charset=utf-8'
+						},
+						data: {
+							followId: userId
+						},
+						success: (res) => {
+							this.isAttention = !this.sAttention;
+							uni.showToast({
+								title: '关注成功',
+								icon: 'success'
+							})
+						}
+					})
+				}
 			},
 			praiseOrCai(type) {
 				if (type === 1) {
